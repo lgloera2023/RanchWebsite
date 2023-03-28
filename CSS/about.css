@@ -1,0 +1,141 @@
+#windmill-background {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    object-fit: cover;
+    z-index: 0;
+}
+
+content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 64px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    margin: 5vw 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: calc(100vw - 96px);
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+.words-wrapper, figure {
+    display: flex;
+    align-items: center;
+}
+.words-wrapper {
+    flex-direction: column;
+    grid-column: 1;
+    grid-row: 1;
+    width: 50%;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgba(245, 222, 179, 0.85);
+}
+h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(111, 63, 63, 0.85);
+    color: white;
+}
+p {
+    font-size: 24px;
+}
+figure {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-end;
+}
+figure img {
+    border-radius: 8px;
+}
+.fig-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+    padding: 8px;
+}
+figcaption {
+    color: white;
+    padding: 4px 0 0 0;
+}
+
+
+/* ------------------------------------------- */
+/* Responsive Design */
+@media only screen and (min-width: 1376px) {
+    footer {
+        background-image: url("/Images/about_footer-background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+    }
+}
+
+@media only screen and (max-width: 1375px) {
+    #windmill-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+    }
+
+    content {
+        position: relative;
+    }
+
+    h1 {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    article {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+        padding: 128px 0;
+    }
+    .words-wrapper {
+        justify-content: center;
+        width: auto;
+        border-radius: 0;
+    }
+    .fig-wrapper {
+        border-radius: 0;
+    }
+    figure {
+        justify-content: center;
+    }
+    h1 {
+        justify-content: flex-start;
+        padding-left: 16px;
+        font-size: 48px;
+    }
+    figure img {
+        width: 100%;
+        height: auto;
+    }
+}

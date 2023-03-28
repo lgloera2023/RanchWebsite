@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Bar 4L Ranch</title>
+        <meta name="description" content="Rough draft for Bar 4L.">
+        <meta name="author" content="Luke Loera">
+
+        <meta property="og:title" content="Bar 4L Ranch">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://127.0.0.1:5500/index.html">
+        <meta property="og:description" content="Rough draft for Bar 4L.">
+        <meta property="og:image" content="OGImage.jpg">
+      
+        <link rel="icon" type="image/png" href="/favicon2.png">
+        <link rel="apple-touch-icon" href="/favicon2.png">
+
+        <link rel="stylesheet" href="CSS/common.css">
+        <link rel="stylesheet" href="CSS/bootAnimation.css">
+        <script async src="JS/bootAnimation.js"></script>
+        <script async src="JS/router.js"></script>
+    </head>
+    <body class="startup-no-overflow">
+        <div id="menu-container" class="startup-animation-canvas">
+            <div id="sun" class="sun-startup">
+                <div id="moon" class="moon-startup"></div>
+            </div>
+            <svg id="menu-plus" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="16" y1="16" x2="16" stroke="white" stroke-width="4"/>
+                <line x1="16" y1="16" x2="16" y2="32" stroke="white" stroke-width="4"/>
+                <line y1="-2" x2="16" y2="-2" transform="matrix(-1 0 0 1 16 18)" stroke="white" stroke-width="4"/>
+                <line y1="-2" x2="16" y2="-2" transform="matrix(1 0 0 -1 16 14)" stroke="white" stroke-width="4"/>
+            </svg>    
+            <svg id="menu-close" state="hidden" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="13" y1="13" x2="1.68626" y2="1.68632" stroke="white" stroke-width="4"/>
+                <line x1="13" y1="13" x2="24.3137" y2="24.3137" stroke="white" stroke-width="4"/>
+                <line y1="-2" x2="16" y2="-2" transform="matrix(-0.707107 0.707107 0.707107 0.707107 14.4142 14.4142)" stroke="white" stroke-width="4"/>
+                <line y1="-2" x2="16" y2="-2" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 11.5858 11.5858)" stroke="white" stroke-width="4"/>
+            </svg>   
+            <div id="logo-container">
+                <svg id="logo-top" width="153" height="20" viewBox="0 0 153 20" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 2H2V4V16V18H4H149H151V16V4V2H149H4Z" stroke="white" stroke-width="4"/>
+                </svg>
+                <svg id="logo-bottom" width="147" height="76" viewBox="0 0 147 76" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M65.7969 74H67.7969V72V4.78125V2.78125H65.7969H53.5156H51.5156V4.78125V30.25H18.25V4.78125V2.78125H16.25H4.0625H2.0625V4.78125V38.3906C2.0625 39.4881 2.26713 40.5474 2.6851 41.5505C3.08596 42.5126 3.63719 43.3761 4.34285 44.1232L4.38208 44.1648L4.42363 44.204C5.15524 44.895 5.99687 45.4519 6.93232 45.8806L6.96411 45.8952L6.99639 45.9087C8.00838 46.3303 9.08459 46.5312 10.2031 46.5312H51.5156V72V74H53.5156H65.7969ZM142.062 74H144.062V72V59.8125V57.8125H142.062H94.5156V4.78125V2.78125H92.5156H80.3281H78.3281V4.78125V65.8594C78.3281 66.9779 78.5291 68.0541 78.9507 69.0661C79.3516 70.0282 79.9028 70.8917 80.6085 71.6389L80.6477 71.6804L80.6893 71.7197C81.4364 72.4253 82.2999 72.9765 83.262 73.3774C84.274 73.7991 85.3502 74 86.4688 74H142.062Z" stroke="white" stroke-width="4"/>
+                </svg>
+            </div>
+        </div>
+        <div id="menu-shadow"></div>
+        <nav state="minimized">
+            <ul>
+                <li><a src="/HTML/home.html">Home</a></li>
+                <li><a src="/HTML/reservation.html">Reservation</a></li>
+                <li><a src="/HTML/event_details.html">Event Details</a></li>
+                <li><a src="/HTML/about.html">About Us</a></li>
+                <li><a src="/HTML/faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+        <main class="main-show">
+        </main>
+        <footer>
+            <ul>
+                <li><a><img id="email-icon" src="/email-icon.png" class="translucent-icon" height="70" width="90" alt="Email"></a></li>
+                <li>
+                    <button id="reservation-btn" class="translucent-icon">
+                        Secure Your Reservation
+                        <div class="shimmer-btn"></div>
+                    </button>
+                </li>
+                <li><a href="http://maps.apple.com/?daddr=1524+Watson-Yeary+Rd,Lampasas,Tx+76550&dirflg=d" target="blank"><img id="map-icon" src="/map-icon.png" height="70" width="70" class="translucent-icon" alt="Directions"></a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,139 @@
+.startup-animation-canvas {
+    animation: sky-animation 3s ease-out forwards;
+}
+@keyframes sky-animation {
+    to {background-color: black;}
+}
+.exit-animation {
+    animation: exit-animation-canvas 2s ease forwards !important;
+}
+@keyframes exit-animation-canvas {
+    to {
+        top: 64px;
+        right: 64px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+#sun {
+    background-color: rgb(255, 208, 0);
+    height: 256px;
+    width: 256px;
+    border-radius: 50%;
+    box-shadow: 0 0 64px 32px rgb(255, 208, 0);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.sun-startup {
+    animation: sun-animation 2s ease-in-out forwards;
+}
+@keyframes sun-animation {
+    to {
+        /* background-color: rgb(255, 94, 0);
+        box-shadow: 0 0 64px 16px rgb(255, 94, 0); */
+        background-color: rgb(255, 208, 0);
+        box-shadow: 0 0 64px 16px rgb(255, 208, 0);
+    }
+}
+
+#moon {
+    background-color: white;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.moon-startup {
+    transform: translate(-150%, 15%);
+    animation: moon-animation 2s ease-out forwards;
+}
+@keyframes moon-animation {
+    to {
+        background-color: rgb(54, 54, 54);
+        transform: translate(-50%, -50%);
+    }
+}
+
+#logo-container {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 240px;
+    width: 240px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-top {
+    margin-bottom: 6px;
+    /* animation: logo-fill 1s ease-in-out 4s forwards; */
+}
+
+#logo-bottom {
+    margin-top: 6px;
+    /* animation: logo-fill 1s ease-in-out 4s forwards; */
+}
+
+#logo-top path {
+    stroke-dasharray: 330;
+    stroke-dashoffset: 330;
+    animation: line-animation 1.5s ease 2.5s forwards;
+}
+#logo-bottom path {
+    stroke-dasharray: 596;
+    stroke-dashoffset: 596;
+    animation: line-animation 2s ease 2.5s forwards;
+}
+@keyframes line-animation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes logo-fill {
+    to {
+        fill: white;
+    }
+}
+
+.exit-logo {
+    animation: logo-disappear 1.5s ease forwards !important;
+}
+@keyframes logo-disappear {
+    to {
+        width: 0;
+        height: 0;
+    }
+}
+
+.exit-moon {
+    animation: moon-exit 1.5s ease forwards !important;
+}
+@keyframes moon-exit {
+    to {
+        width: 72px;
+        height: 72px;
+        /* background-color: rgb(255, 94, 0); */
+        background-color: rgb(255, 208, 0);
+    }
+}
+.exit-sun {
+    animation: sun-exit 1.5s ease forwards !important;
+}
+@keyframes sun-exit {
+    to {
+        width: 80px;
+        height: 80px;
+        /* box-shadow: 0 0 16px 8px rgb(255, 94, 0); */
+        box-shadow: 0 0 16px 8px rgb(255, 208, 0);
+    }
+}

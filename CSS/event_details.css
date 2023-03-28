@@ -1,0 +1,277 @@
+h1 {
+    font-size: 64px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ------------------------------------------- */
+/* Slider Header */
+lanesh {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 43vh;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+lanesh * {
+    transition: 0.5s all;
+}
+input {
+    display: none;
+}
+lanesh label {
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+lanesh label span {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: solid rgba(0, 0, 0, 0.75) 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(33.33% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2;
+}
+/* Details Checked */
+#details-radio:checked ~ lanesh [for="details-radio"] {
+    color: white;
+}
+#details-radio:checked ~ lanesh #slider {
+    left: 4px;
+}
+#details-radio:checked ~ lanes {
+    left: 25vw;
+}
+#details-radio:checked ~ lanes #details {
+    opacity: 1;
+}
+
+/* Timeline Checked */
+#timeline-radio:checked ~ lanesh [for="timeline-radio"] {
+    color: white;
+}
+#timeline-radio:checked ~ lanesh #slider {
+    left: calc(33.33% + 4px);
+}
+#timeline-radio:checked ~ lanes {
+    left: -25vw;
+}
+#timeline-radio:checked ~ lanes #timeline {
+    opacity: 1;
+}
+
+/* Rules and Directions Checked */
+#rules-directions-radio:checked ~ lanesh [for="rules-directions-radio"] {
+    color: white;
+}
+#rules-directions-radio:checked ~ lanesh #slider {
+    left: calc(66.67% + 4px);
+}
+#rules-directions-radio:checked ~ lanes {
+    left: -75vw;
+}
+#rules-directions-radio:checked ~ lanes #rules-directions {
+    opacity: 1;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+/* Lanes Info */
+lanes {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 32px;
+    position: relative;
+    width: 150vw;
+    transition: 0.5s all;
+}
+lane {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.5s all;
+    opacity: 0;
+}
+
+/* ------------------------------------------- */
+/* Details */
+article {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 16px;
+    margin: 16px 32px;
+    border-radius: 8px;
+}
+article h3 {
+    font-size: 24px;
+}
+article h4 {
+    margin-top: 8px;
+}
+article ul, article p, article h4 {
+    font-size: 20px;
+}
+article ul {
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+    color: white;
+    list-style-position: inside;
+    padding: 8px;
+    margin-top: 4px;
+}
+article ul li {
+    margin: 8px 0;
+}
+#skeet-register-btn {
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: rgb(111, 63, 63);
+    border-radius: 8px;
+    transition: 0.25s all;
+    margin: 8px;
+    box-shadow: 0 0 4px black;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#skeet-register-btn:hover {
+    box-shadow: 0 0 8px black;
+    cursor: pointer;
+}
+#skeet-register-btn:active {
+    box-shadow: inset 0 0 8px black;
+}
+
+/* ------------------------------------------- */
+/* Timeline */
+#timeline {
+    margin-top: 16px;
+}
+
+table {
+    border-spacing: 8px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.25);
+    width: calc(100% - 64px);
+}
+td, th {
+    padding: 8px;
+    border-radius: 4px;
+}
+th {
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+}
+td {
+    /* background-color: rgba(255, 255, 255, 0.75); */
+    font-size: 24px;
+}
+
+[rowgroup="SAT"] td {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+[rowgroup="SUN"] td {
+    background-color: rgba(200, 200, 200, 0.85);
+}
+[rowgroup="MON"] td {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+[rowgroup="FIN"] td {
+    background-color: rgba(255, 223, 223, 0.75);
+}
+
+/* ------------------------------------------- */
+/* Responsive Design */
+@media only screen and (max-width: 720px) {
+    h1 {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        justify-content: flex-start;
+        padding-left: 16px;
+        font-size: 40px;
+    }
+    lanesh {
+        margin-top: 40vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    lanesh label {
+        height: 102px;
+    }
+    #slider {
+        top: 4px;
+        left: 4px;
+        width: calc(100% - 8px);
+        height: calc(33.33% - 8px);
+    }
+    lanes {
+        display: block;
+        width: 100vw;
+    }
+    #details, #timeline, #rules-directions {
+        display: none;
+    }
+    lane {
+        width: 100vw;
+    }
+    /* Coordinating Instructions Checked */
+    #details-radio:checked ~ lanesh #slider {
+        top: 4px;
+    }
+    #details-radio:checked ~ lanes {
+        left: 0;
+    }
+    #details-radio:checked ~ lanes #details {
+        display: flex;
+    }
+
+    /* Timeline Checked */
+    #timeline-radio:checked ~ lanesh #slider {
+        top: calc(33.33% + 4px);
+        left: 4px;
+    }
+    #timeline-radio:checked ~ lanes {
+        left: 0;
+    }
+    #timeline-radio:checked ~ lanes #timeline {
+        display: flex;
+    }
+
+    /* Rules and Directions Checked */
+    #rules-directions-radio:checked ~ lanesh #slider {
+        top: calc(66.67% + 4px);
+        left: 4px;
+    }
+    #rules-directions-radio:checked ~ lanes {
+        left: 0;
+    }
+    #rules-directions-radio:checked ~ lanes #rules-directions {
+        display: flex;
+    }
+}

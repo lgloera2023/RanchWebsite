@@ -1,0 +1,261 @@
+/* ------------------------------------------- */
+/*              CSS for Home Page              */
+/* ------------------------------------------- */
+#spacer {
+    height: 80vh;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 1;
+    position: relative;
+}
+#spacer div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+    max-width: 600px;
+    border-radius: 16px;
+    background-color: rgba(255, 216, 216, 0.75);
+}
+.vertical-option {
+    display: none !important;
+}
+#spacer h1 {
+    font-size: 40px;
+}
+#spacer h2 {
+    font-size: 32px;
+}
+
+#article-container {
+    position: relative;
+}
+
+.left-third {
+    left: 33%;
+}
+.middle {
+    left: 50%;
+}
+.right-third {
+    left: 67%;
+}
+
+#feature-4 {
+    left: 50%;
+    margin-bottom: 5vh;
+}
+
+/***********************************************/
+/* Sales Card */
+/***********************************************/
+.sales-card {
+    position: relative;
+    transform: translateX(-50%);
+    /* Left included in left-third, middle, and right-third classes */
+    width: 600px;
+    height: 1050px;
+    margin-bottom: 25vh;
+    z-index: 2;
+}
+.prompt-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+    height: 1050px;
+    z-index: 3;
+}
+.prompt {
+    width: 550px;
+    height: calc(550px - 32px);
+    padding: 16px 0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #f5c0b3;
+
+    position: sticky;
+    top: 25%;
+
+    background-color: #17141d;
+    color: #f5c0b3;
+    z-index: 3;
+
+    display: flex;
+    justify-content: center;
+}
+.prompt-text {
+    top: 48px;
+    width: 400px;
+}
+.card-title {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+}
+.card-title div {
+    text-align: center;
+}
+.answer-text {
+    color: #17141d;
+    z-index: 5;
+    background-color: #f5c0b3;
+    margin: 0 24px;
+    top: 96px;
+}
+.answer-text-container {
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(-578px);
+    overflow: hidden;
+    z-index: 5;
+}
+
+.shades {
+    height: 150px;
+    width: 225px;
+    border-radius: 0 0 50% 50%;
+    background-color: #f5c0b3;
+    position: absolute;
+    bottom: 350px;
+}
+.left-lense {
+    left: 80px;
+}
+.right-lense {
+    right: 80px;
+}
+.smile {
+    position: absolute;
+    left: 50%;
+    transform: rotate(-2deg) translateX(-50%);
+    bottom: -48px;
+    height: 70%;
+    width: 70%;
+}
+
+/***********************************************/
+/* Article */
+/***********************************************/
+.case {
+    background-color: #f5c0b3;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #f5c0b3;
+
+    position: absolute;
+    bottom: -24px;
+    z-index: 2;
+
+    padding: 16px;
+    height: calc(600px - 32px);
+    width: calc(600px - 32px);
+}
+.case-text {
+    position: absolute;
+    bottom: 132px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 460px;
+    height: 230px;
+    color: #f5c0b3;
+    font-size: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.case-text p {
+    margin: 16px 32px;
+    font-size: 1.25em;
+}
+
+/* ------------------------------------------- */
+#home-image {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 0;
+    object-fit: cover;
+}
+
+/* ------------------------------------------- */
+/* Responsive Design */
+@media only screen and (max-width: 720px) {
+    .left-third, .right-third {
+        left: 50%;
+    }
+    .horizontal-option {
+        display: none !important;
+    }
+    .vertical-option {
+        display: flex !important;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+    .sales-card {
+        width: 100vw;
+        height: 1050px;
+    }
+    .prompt-container {
+        width: 92vw;
+        height: 1050px;
+    }
+    .prompt {
+        width: 92vw;
+        height: calc(92vw - 32px);
+    }
+    .prompt-text {
+        top: 8vw;
+        width: 67vw;
+    }
+    .answer-text-container {
+        height: 100vw;
+        width: 100vw;
+        transform: translateY(-96vw);
+    }
+    .answer-text {
+        margin: 0;
+        top: 16vw;
+    }
+    .shades {
+        height: 25vw;
+        width: 36vw;
+        bottom: 54vw;
+    }
+    .left-lense {
+        left: 13vw;
+    }
+    .right-lense {
+        right: 13vw;
+    }
+    .case {
+        bottom: -4vw;
+        height: calc(100vw - 32px);
+        width: calc(100vw - 32px);
+    }
+    .case-text {
+        bottom: 21vw;
+        width: 92vw;
+        height: 38vw;
+        font-size: 14px;
+    }
+    .case-text p {
+        margin: 4px 16px;
+    }
+    br {
+        margin: 0;
+    }
+}
