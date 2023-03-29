@@ -1,0 +1,49 @@
+h1 {
+    font-size: 64px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-background {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.85);
+}
+
+content {
+    display: block;
+    margin-bottom: 20vh;
+}
+
+article p {
+    margin-top: 48vh;
+    width: 60vw;
+    min-width: 656px;
+    padding: 32px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.75);
+    font-size: 32px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ------------------------------------------- */
+/* Responsive Design */
+@media only screen and (max-width: 720px) {
+    h1 {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        justify-content: flex-start;
+        padding-left: 16px;
+        font-size: 40px;
+    }
+    .header-background {
+        background-color: transparent;
+    }
+    article p {
+        min-width: initial;
+        width: 75vw;
+    }
+}
