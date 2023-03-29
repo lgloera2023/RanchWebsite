@@ -44,6 +44,6 @@ article p {
     }
     article p {
         min-width: initial;
-        width: 75vw;
+        width: calc(90vw - 64px);
     }
 }

@@ -14,7 +14,7 @@ content {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 32px;
+    margin: 96px 32px;
 }
 article {
     width: 60vw;
@@ -22,28 +22,38 @@ article {
     background-color: rgba(255, 255, 255, 0.65);
     border-radius: 8px;
     overflow-y: hidden;
-    height: 60px;
+    height: 148px;
     transition: 0.5s all;
+    position: relative;
 }
 article h2 {
-    font-size: 40px;
-    text-align: center;
+    font-size: 32px;
     margin-bottom: 8px;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 article p {
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
-    margin-bottom: 8px;
+    height: 72px;
 }
 input {
     display: none;
 }
 input:checked + label article {
-    height: 144px;
+    height: 272px;
 }
 .arrow-container {
     position: relative;
-    height: 16px;
+    height: 32px;
+}
+.article-container label article .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .expand-icon, .hide-icon {
     position: absolute;
@@ -76,5 +86,15 @@ article:hover {
         justify-content: flex-start;
         padding-left: 16px;
         font-size: 40px;
+    }
+    article {
+        width: calc(100vw - 32px);
+        border-radius: 0;
+    }
+    article p {
+        height: 96px;
+    }
+    input:checked + label article {
+        height: 296px;
     }
 }
