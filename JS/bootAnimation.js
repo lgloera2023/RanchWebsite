@@ -111,8 +111,6 @@ var bootAnim = setTimeout(() => {
 
     // Set the end states
     canvas.style.backgroundColor = "black";
-    // sun.style.backgroundColor = "rgb(255, 94, 0)";
-    // sun.style.boxShadow = "0 0 64px 16px rgb(255, 94, 0)";
     sun.style.backgroundColor = "rgb(255, 208, 0)";
     sun.style.boxShadow = "0 0 64px 16px rgb(255, 208, 0)";
     moon.style.backgroundColor = "rgb(54, 54, 54)";
@@ -141,8 +139,12 @@ var bootAnim = setTimeout(() => {
     }, 1750);
 
     // Show home page
+    let baseURL = window.location.href;
+    if (baseURL[baseURL.length - 1] == "/") {
+        baseURL = baseURL.substring(0, baseURL.length - 1);
+    }
     let main = document.querySelector("main");
-    fetch("/HTML/home.html")
+    fetch(baseURL + "/HTML/home.html")
     .then(response => response.text())
     .then(text => {
         main.innerHTML = text;

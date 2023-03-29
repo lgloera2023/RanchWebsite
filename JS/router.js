@@ -1,4 +1,5 @@
 const Router = {
+    baseURL: "",
     currPage: "/HTML/home.html",
     changePage: function(href) {
         let main = document.querySelector("main");
@@ -59,7 +60,7 @@ const Router = {
                 }, 100);
 
                 // Show next page
-                fetch(href)
+                fetch(this.baseURL + href)
                 .then(response => response.text())
                 .then(text => {
                         main.innerHTML = text;
@@ -96,6 +97,15 @@ const Router = {
         }
     }
 }
+
+/////////////////////////////////////////////////
+// Set the base URL
+let _baseURL = window.location.href;
+if (_baseURL[_baseURL.length - 1] == "/") {
+    _baseURL = _baseURL.substring(0, _baseURL.length - 1);
+}
+
+Router.baseURL = _baseURL;
 
 /////////////////////////////////////////////////
 // Restructure Nav Link Tags
