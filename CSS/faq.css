@@ -1,0 +1,80 @@
+h1 {
+    font-size: 64px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+content {
+    display: block;
+    padding-bottom: 64px;
+}
+
+.article-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px;
+}
+article {
+    width: 60vw;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 8px;
+    overflow-y: hidden;
+    height: 60px;
+    transition: 0.5s all;
+}
+article h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+article p {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+input {
+    display: none;
+}
+input:checked + label article {
+    height: 144px;
+}
+.arrow-container {
+    position: relative;
+    height: 16px;
+}
+.expand-icon, .hide-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.expand-icon line, .hide-icon line {
+    stroke-dasharray: 16;
+    transition: 0.5s all;
+}
+.hide-icon line {
+    stroke-dashoffset: 16;
+}
+input:checked + label .expand-icon line {
+    stroke-dashoffset: 16;
+}
+input:checked + label .hide-icon line {
+    stroke-dashoffset: 0;
+}
+article:hover {
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+/* Responsive Design */
+@media only screen and (max-width: 720px) {
+    h1 {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        justify-content: flex-start;
+        padding-left: 16px;
+        font-size: 40px;
+    }
+}
