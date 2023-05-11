@@ -143,6 +143,9 @@ var bootAnim = setTimeout(() => {
     if (baseURL[baseURL.length - 1] == "/") {
         baseURL = baseURL.substring(0, baseURL.length - 1);
     }
+    if (baseURL.includes("/index.html")) {
+        baseURL = baseURL.replace("/index.html", "");
+    }
     let main = document.querySelector("main");
     fetch(baseURL + "/HTML/home.html")
     .then(response => response.text())

@@ -16,8 +16,12 @@ content {
     margin-bottom: 20vh;
 }
 
-article p {
+article .vertical-whitespace {
     margin-top: 48vh;
+}
+
+.light-background {
+    margin-bottom: 25vh;
     width: 60vw;
     min-width: 656px;
     padding: 32px;
@@ -27,6 +31,33 @@ article p {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.light-background ul {
+    margin-top: 16px;
+    font-size: 24px;
+    position: relative;
+    left: 64px;
+    width: calc(100% - 64px);
+}
+.light-background ul li {
+    margin: 8px 0;
+}
+
+.light-background h2 {
+    margin-bottom: 16px;
+    font-size: 40px;
+}
+
+table {
+    width: 100%;
+}
+table thead tr {
+    text-align: left;
+}
+
+.light-background hr {
+    margin: 16px 0;
 }
 
 /* ------------------------------------------- */

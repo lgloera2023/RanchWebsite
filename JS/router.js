@@ -46,54 +46,57 @@ const Router = {
             main.classList.add("main-hide");
             main.classList.remove("main-show");
             
-            // Transition pages
-            let changeTimeout = setTimeout(() => {
-                // Nav links
-                var i = 0;
-                let navLinkInterval = setInterval(() => {
-                    navLinks.item(i).classList.add("nav-link-hide");
-                    navLinks.item(i).classList.remove("nav-link-show");
+            // Get the next page and plug into DOM
+            fetch(this.baseURL + href)
+            .then(response => response.text())
+            .then(text => {
+                main.innerHTML = text;
+                window.scrollTo(0, 0);  // Scroll to top
 
-                    if (++i > navLinks.length - 1) {
-                        window.clearInterval(navLinkInterval);
-                    }
-                }, 100);
+                // Phase out the menu
+                let changeTimeout = setTimeout(() => {
+                    // Nav links
+                    var i = 0;
+                    let navLinkInterval = setInterval(() => {
+                        navLinks.item(i).classList.add("nav-link-hide");
+                        navLinks.item(i).classList.remove("nav-link-show");
 
-                // Show next page
-                fetch(this.baseURL + href)
-                .then(response => response.text())
-                .then(text => {
-                        main.innerHTML = text;
-                        window.scrollTo(0, 0);  // Scroll to top
-                        main.classList.add("main-show");
-                        main.classList.remove("main-hide");
+                        if (++i > navLinks.length - 1) {
+                            window.clearInterval(navLinkInterval);
+                        }
+                    }, 100);
 
-                        // Minimize menu
-                        plus.querySelectorAll("line").forEach((line) => {
-                            line.classList.add("menu-icon-show");
-                            line.classList.remove("menu-icon-hide");
-                        });
-        
-                        close.querySelectorAll("line").forEach((line) => {
-                            line.classList.add("menu-icon-hide");
-                            line.classList.remove("menu-icon-show");
-                        });
-        
-                        moon.classList.add("eclipse-exit");
-                        moon.classList.remove("eclipse-enter");
-                        shadow.style.opacity = "0.75";
-                        shadow.classList.add("menu-shadow-hide");
-                        shadow.classList.remove("menu-shadow-show");
-                });
+                    // Minimize menu
+                    main.classList.add("main-show");
+                    main.classList.remove("main-hide");
 
-                // Clear timeout
-                window.clearTimeout(changeTimeout);
-                
-                delay(() => {
-                    nav.setAttribute("state", "minimized");
-                    shadow.style.visibility = "hidden";
-                }, 1750);
-            }, 500);
+                    plus.querySelectorAll("line").forEach((line) => {
+                        line.classList.add("menu-icon-show");
+                        line.classList.remove("menu-icon-hide");
+                    });
+    
+                    close.querySelectorAll("line").forEach((line) => {
+                        line.classList.add("menu-icon-hide");
+                        line.classList.remove("menu-icon-show");
+                    });
+    
+                    moon.classList.add("eclipse-exit");
+                    moon.classList.remove("eclipse-enter");
+                    shadow.style.opacity = "0.75";
+                    shadow.classList.add("menu-shadow-hide");
+                    shadow.classList.remove("menu-shadow-show");
+
+                    // Clean up the viewport so shadow doesn't keep
+                    // user from clicking
+                    delay(() => {
+                        nav.setAttribute("state", "minimized");
+                        shadow.style.visibility = "hidden";
+                    }, 1750);
+
+                    // Clear timeout
+                    window.clearTimeout(changeTimeout);
+                }, 500);
+            });
         }
     }
 }
@@ -103,6 +106,9 @@ const Router = {
 let _baseURL = window.location.href;
 if (_baseURL[_baseURL.length - 1] == "/") {
     _baseURL = _baseURL.substring(0, _baseURL.length - 1);
+}
+if (_baseURL.includes("/index.html")) {
+    _baseURL = _baseURL.replace("/index.html", "");
 }
 
 Router.baseURL = _baseURL;
