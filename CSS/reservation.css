@@ -73,8 +73,17 @@ table thead tr {
     .header-background {
         background-color: transparent;
     }
-    article p {
+    article .light-background {
         min-width: initial;
         width: calc(90vw - 64px);
+    }
+    article .light-background h2 {
+        font-size: 35px;
+    }
+    article .light-background p {
+        font-size: 24px;
+    }
+    table {
+        font-size: 20px;
     }
 }

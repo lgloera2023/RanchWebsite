@@ -92,7 +92,7 @@ article:hover {
         border-radius: 0;
     }
     article p {
-        height: 96px;
+        height: 100px;
     }
     input:checked + label article {
         height: 296px;
