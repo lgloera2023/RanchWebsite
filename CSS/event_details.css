@@ -188,6 +188,39 @@ td {
 }
 
 /* ------------------------------------------- */
+/* Rules and Directions */
+#rules-directions img {
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 8px;
+    transition: all 0.25s;
+    box-shadow: none;
+}
+#rules-directions img:hover, #rules-directions img:focus {
+    box-shadow: 0 0 8px black;
+}
+#RV-Camper-Video-Btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 24px;
+    background-color: rgba(111, 63, 63, 0.75);
+    border: none;
+    color: rgb(196, 196, 196);
+    transition: all 0.15s;
+    border-radius: 8px;
+}
+#RV-Camper-Video-Btn:hover, #RV-Camper-Video-Btn:hover {
+    background-color: rgba(111, 63, 63, 1);
+    color: white;
+}
+#RV-Camper-Video-Btn:active {
+    box-shadow: inset 0 0 8px;
+}
+
+/* ------------------------------------------- */
 /* Responsive Design */
 @media only screen and (max-width: 720px) {
     h1 {
