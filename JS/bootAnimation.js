@@ -139,13 +139,8 @@ var bootAnim = setTimeout(() => {
     }, 1750);
 
     // Show home page
-    let baseURL = window.location.href;
-    if (baseURL[baseURL.length - 1] == "/") {
-        baseURL = baseURL.substring(0, baseURL.length - 1);
-    }
-    if (baseURL.includes("/index.html")) {
-        baseURL = baseURL.replace("/index.html", "");
-    }
+    // Use window origin to facilitate local and production development
+    let baseURL = window.location.origin;
     let main = document.querySelector("main");
     fetch(baseURL + "/HTML/home.html")
     .then(response => response.text())

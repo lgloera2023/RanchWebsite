@@ -103,15 +103,7 @@ const Router = {
 
 /////////////////////////////////////////////////
 // Set the base URL
-let _baseURL = window.location.href;
-if (_baseURL[_baseURL.length - 1] == "/") {
-    _baseURL = _baseURL.substring(0, _baseURL.length - 1);
-}
-if (_baseURL.includes("/index.html")) {
-    _baseURL = _baseURL.replace("/index.html", "");
-}
-
-Router.baseURL = _baseURL;
+Router.baseURL = window.location.origin
 
 /////////////////////////////////////////////////
 // Restructure Nav Link Tags
