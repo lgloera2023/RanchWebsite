@@ -29,7 +29,10 @@ const timeCheck = window.setInterval(() => {
         countdown = document.querySelector("#countdown-h");
         countdown_v = document.querySelector("#countdown-v");
 
-        moment.input_ms = eclipseStart - Date.now();
+        // Convert the local time to GMT
+        let date = new Date();
+        let timeNow = date.getTime() + (date.getTimezoneOffset() * 60 * 1000);  // Add the offset in milliseconds
+        moment.input_ms = eclipseStart - timeNow;
         moment.update_output();
 
         if (countdown.querySelector("days").innerText != moment.output_days) {
@@ -37,7 +40,7 @@ const timeCheck = window.setInterval(() => {
             countdown_v.querySelector("days").innerText = moment.output_days;
         } 
         if (countdown.querySelector("hours").innerText != moment.output_hours) {
-            countdown.querySelector("hours").innerText != moment.output_hours;
+            countdown.querySelector("hours").innerText = moment.output_hours;
             countdown_v.querySelector("hours").innerText = moment.output_hours;
         }
         if (countdown.querySelector("minutes").innerText != moment.output_minutes) {
