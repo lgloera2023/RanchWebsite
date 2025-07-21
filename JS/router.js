@@ -103,7 +103,11 @@ const Router = {
 
 /////////////////////////////////////////////////
 // Set the base URL
-Router.baseURL = window.location.origin
+if (window.location == "https://lgloera2023.github.io/RanchWebsite/") {
+    Router.baseURL = window.location;
+} else {
+    Router.baseURL = window.location.origin;
+}
 
 /////////////////////////////////////////////////
 // Restructure Nav Link Tags
