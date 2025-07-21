@@ -141,6 +141,9 @@ var bootAnim = setTimeout(() => {
     // Show home page
     // Use window origin to facilitate local and production development
     let baseURL = window.location.origin;
+    if (window.location == "https://lgloera2023.github.io/RanchWebsite/") {
+        baseURL = "https://lgloera2023.github.io/RanchWebsite";
+    }
     let main = document.querySelector("main");
     fetch(baseURL + "/HTML/home.html")
     .then(response => response.text())
