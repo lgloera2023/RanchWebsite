@@ -104,7 +104,8 @@ const Router = {
 /////////////////////////////////////////////////
 // Set the base URL
 if (window.location == "https://lgloera2023.github.io/RanchWebsite/") {
-    Router.baseURL = window.location;
+    Router.baseURL = "https://lgloera2023.github.io/RanchWebsite";
+    Router.currPage = Router.baseURL + Router.currPage;
 } else {
     Router.baseURL = window.location.origin;
 }
